@@ -1,0 +1,72 @@
+Chapter 1:
+	Java is an Object Oriented language.  IE it has encapsulation, polymorphism, inheritance, and variables.
+	Varialbe my start with any letter, an underscore, or a dollar sign ($).
+
+Chapter 2:
+	Primitive Data types in Java: 
+		Boolean, byte, char, double, float, int long, short
+		*No unsigned values as java engineers think they are unnecessary
+		**Java uses Unicode as it is available around the world for all operating systems
+		***There is not constant keyword (but there is another implementation discussed later)
+	Java's literals, actual values such as 104 or 14382, may contain an underscord to help split up the values.
+		Example: 100_562 is a valid integer in Java.  It will simply ignore the underscore during compile time.
+	Java uses a back slach (\) to define literal characters.  Since multiple characters are special signals, using a \ before the letter informs the compiler you want the special character as part of the string.
+	Scope:
+		Java doesn't allow same name variables anywhere in the code. So if there is a global variable X, there cannot be a variable named x in any function.
+	Type Casting:
+		Java doesn't require type casting if the variable on the left hand of the equals operand has a larger storage space than the data obtained from the right hand of the equals operand.
+		Otherwise, type casting follows C rules.
+
+Chapter 3:
+	Control structures such as loops, if statements, and switch statements follow C rules.
+	The one added control structure is a "for each" loop.  Where we create a temporary reference to an object type and use the array of that object type to modify the elements in it.
+
+Chapter 4:
+	Everything in Java works with classes.  Methods are applied to class objects.  
+	All classes must be dynamically allocated at run time using the new key word which allows Java to utilize garbage collection on the Heap.
+	The 'this' keyword exists to allows an object to reference itself.  It can also be used to differentiate between a class objects variable name and the parameter being passed to it if they have the same name.
+Chapter 5:
+	Arrays follow the C standard.  Irregular or jagged arrays are valid, though not recommended.
+Chapter 6:
+	Java supports packages.  Packages are a group of classes. Depending on the classes security, public, protected, default, or private, will determine where the class can be used within the Java Project.
+	Public classes can be used anywhere in a Java project by non-subclasses.
+	Protected classes can be used by any method within the package.
+	Default classes can be used by any non subclass within the package.
+	Private classes can only be used within the same class.
+
+	Methods in Java always pass by value unless the object itself is a reference.  For example, there is no way to pass an integer by reference in order to modify its value within the method; however, it is possilbe to
+	use a class type of integer, called wrappers, to pass by reference.  In the same regard, there is no way to pass an object to a method by value; however, once inside of the method a copy can be manually made.  
+	
+	Java supports overloading methods.  This means that a method call is not only defined by the methods name, but its name and parameter set or signature.
+	
+	Recursion is supported in Java.
+	
+Chapter 7:
+	Java allows inheritance through the 'extends' keyword.  Meaning it is possible to have a super class that has multiple or a single subclass that inherits all of its super class' methods and variables.
+
+	Java classes support static variables.  A static variable in a class means that each instance of the object share the variable and do not have their own copy.  This is highly useful! Imagine a program
+	with a vehicle class that has subclasses: car, truck, motorcycle. If the vehicle class had a static variable: number_of_vehicles, everytime the constructor for car, truck, or motorocylce is called the program
+	could increment the static variable and any instance of car, truck, or motorcycle could output the total amount of vehicles. 	
+	
+	Java supports overriding methods for subclasses.  The reason this is so powerful for Java, is that the program can have an array of a super class, and have a method called on each instance in the array.
+	The method called is determince, not by the reference object of type super class, but the subclass and signature.
+
+	Abstract methods are methods in a super class that are required to be overridden by every subclass. If a super class has an abstract method, the entire class must be abstract, meaning no instances of the super class
+	be created.
+
+	When a subclass is created, the constructor for the superclasses are ran from most super to the last subclass.
+
+	The 'final' keyword prevents method overriding for methods.  When applied to a variable, the variable's value cannot be altered.
+
+Chapter 8:
+	Classes can 'inherit' instead of 'extend'.
+	Inheriting an interface is similar to abstract methods.  The method must be implemented in the class; however, implementing does not make the class a subclass of another class that it inherits.
+
+Chapter 9:
+	Error checking in Java, utilizes a try, catch, throw, finally system.
+	A try block will attempt to run a section of code.  If a runtime error occurs, the program will not terminate.  Instead the try block will throw the error and it will be caught by the catch statement.  Within the catch
+	statement programs can gracefully handle runtime errors that would terminate the program or errors with unexpected parameters to custome classes.  The 'throws' keyword allows the programs to throw an error whether it violates
+	class rules instead of Java runtime errors.  The 'finally' keyword runs a block of code regardless of an error being thrown from the try block or not.
+
+Chapter 11:
+	MultiThreading!
