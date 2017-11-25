@@ -56,13 +56,14 @@ class MyThread5 implements Runnable{
 		if(thrd.getName().compareTo("tick") == 0) {
 			for(int i=0; i < 5; i++) {
 				ttOb.tick(true);
-				ttOb.tick(false);
 			}
+			ttOb.tick(false);
+			
 		}else {
 			for(int i=0; i<5; i++) {
 				ttOb.tock(true);
-				ttOb.tock(false);
 			}
+			ttOb.tock(false);
 		}
 	}
 }

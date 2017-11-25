@@ -59,5 +59,6 @@ public class Example8 {
 		t2.showStyle();
 		t2.showDim();
 		System.out.println("area is " + t2.area());
+
 	}
 }

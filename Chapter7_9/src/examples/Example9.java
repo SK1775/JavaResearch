@@ -72,5 +72,11 @@ public class Example9 {
 		t2.showStyle();
 		t2.showDim();
 		System.out.println("area is " + t2.area());
+		
+		final int x_final = 100;
+		// x_final--; not allowed!
+		System.out.println("x_final is " + x_final + ", x_final - 1 = " + (x_final-1) + " but we cannot use x-- as it changes the value of x_final!");
+		
+		
 	}
 }
