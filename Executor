@@ -1,0 +1,56 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+
+public class main {
+	
+	private static final int Numthreads = 4;
+	
+	public 	static  void main(String[] args){
+		
+		ExecutorService executor = Executors.newFixedThreadPool(Numthreads);		
+		
+		for(int i=0;i<Numthreads;i++){			
+		executor.submit(new id(i,i));
+		
+		}
+		
+		executor.shutdown();
+		try {
+            Thread.sleep(2000);
+         } catch (Exception ex) {
+            System.out.println("All threads not finished.");
+           
+         }
+		
+	}
+
+
+public class id implements Runnable{
+	
+	private int thrd;
+	private int num;
+	
+	public id(int thrd){
+		this.thrd= thrd;
+		
+	}
+	
+	 public void run()
+	{	 	 
+		 for (int i = 0; i <3; i++) {
+	         try {
+	            System.out.println("Thread ID: " +
+	               thrd + " Iteration No: " + i);
+	            Thread.sleep(2000);
+	         } catch (Exception ex) {
+	            System.out.println("Task ID: " +
+	               thrd + " is interrupted.");
+	            break;
+	         }
+	      }
+	   }
+
+}
+
+
